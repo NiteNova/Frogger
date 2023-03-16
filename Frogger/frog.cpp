@@ -20,13 +20,13 @@ void frog::draw(sf::RenderWindow& window) {
 
 void frog::jump(bool* keys) {
 	if (keys[UP] == true)
-		yVel = -0.1;
+		yVel = -50;
 	else if (keys[DOWN] == true)
-		yVel = 0.1;
+		yVel = 50;
 	else if (keys[LEFT] == true)
-		xVel = -0.1;
+		xVel = -50;
 	else if (keys[RIGHT] == true)
-		xVel = 0.1;
+		xVel = 50;
 	else {
 		yVel = 0;
 		xVel = 0;
