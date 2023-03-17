@@ -3,7 +3,7 @@
 #include <iostream>
 using namespace std;
 
-class frog{
+class frog {
 private:
 	float xpos;
 	float ypos;
