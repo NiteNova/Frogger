@@ -2,7 +2,9 @@
 #include <iostream>
 #include "globals.h"
 #include "frog.h"
+#include "car.h"
 #include <time.h>
+#include <vector>
 using namespace std;
 
 int main() {
@@ -15,6 +17,12 @@ int main() {
 
 	frog player;
 
+	vector<car*> cars; // make a vector of pointers to car objects
+	for (int i = 0; i < 5; i++) // handles number of cars in each row
+		for (int j = 0; j < 1; j++) {// handles number of rows we have
+			cars.push_back(new car(i * 400 + 100, j * 200 + 500, LEFT));
+			cars.push_back(new car(i * 300 + 200, j * 200 + 600, RIGHT));
+		}
 	while (screen.isOpen()) { //gameloop
 		//input section
 		sf::Event event;
@@ -47,10 +55,18 @@ int main() {
 			player.jump(keys);
 			timer = 0;
 		}
-		
+		for (vector<car*>::iterator i = cars.begin(); i != cars.end(); i++)
+		{
+			(*i)->move();
+		}
 
 		//render section
 		screen.clear();
+
+		for (vector<car*>::iterator i = cars.begin(); i != cars.end(); i++)
+		{
+			(*i)->draw(screen);
+		}
 
 		player.draw(screen);
 

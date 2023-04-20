@@ -10,7 +10,7 @@ private:
 	float ypos;
 	int green = rand() % 100 + 200;
 	int blue = rand() % 100 + 200;
-	int direction = RIGHT;
+	int directionG;
 public:
 	car(int x, int y, int direction);
 	void draw(sf::RenderWindow& window);

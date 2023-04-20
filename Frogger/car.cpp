@@ -1,7 +1,13 @@
 #include <SFML/Graphics.hpp>
 #include "car.h"
 
-void car:: draw(sf::RenderWindow& window) {
+car::car(int x, int y, int direction) {
+	xpos = x;
+	ypos = y;
+	directionG = direction;
+}
+
+void car::draw(sf::RenderWindow& window) {
 	sf::RectangleShape vehicle(sf::Vector2f(100, 50));
 	vehicle.setFillColor(sf::Color(250, green, blue));
 	vehicle.setPosition(xpos, ypos);
@@ -9,12 +15,12 @@ void car:: draw(sf::RenderWindow& window) {
 }
 
 void car::move() {
-	if (direction == LEFT) {
+	if (directionG == LEFT) {
 		if (xpos < -100)
 			xpos = 100;
 		xpos -= .1;
 	}
-	else if (direction == RIGHT) {
+	else if (directionG == RIGHT) {
 		if (xpos > 1100)
 			xpos = -100;
 		xpos += .1;
