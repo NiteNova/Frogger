@@ -17,7 +17,7 @@ void car::draw(sf::RenderWindow& window) {
 void car::move() {
 	if (directionG == LEFT) {
 		if (xpos < -100)
-			xpos = 100;
+			xpos = 1100;
 		xpos -= .1;
 	}
 	else if (directionG == RIGHT) {
@@ -27,7 +27,7 @@ void car::move() {
 	}
 }
 bool car::collide(int x, int y) {
-	if (xpos + 100 < x && xpos >= x && ypos + 50 > y && ypos <= y) {
+	if (xpos + 100 > x && xpos <= x && ypos + 50 > y && ypos <= y) {
 		cout << "U DED" << endl;
 		return true;
 	}

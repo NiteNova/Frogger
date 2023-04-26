@@ -5,7 +5,7 @@
 
 frog::frog() {
 	xpos = 500;
-	ypos = 954;
+	ypos = 920;
 	lives = 5;
 	xVel = 0;
 	yVel = 0;
@@ -20,13 +20,13 @@ void frog::draw(sf::RenderWindow& window) {
 
 void frog::jump(bool* keys) {
 	if (keys[UP] == true)
-		yVel = -50;
+		yVel = -60;
 	else if (keys[DOWN] == true)
-		yVel = 50;
+		yVel = 60;
 	else if (keys[LEFT] == true)
-		xVel = -50;
+		xVel = -60;
 	else if (keys[RIGHT] == true)
-		xVel = 50;
+		xVel = 60;
 	else {
 		yVel = 0;
 		xVel = 0;
@@ -41,5 +41,5 @@ void frog::ded() {
 	Beep(500, 500);
 	lives--;
 	xpos = 500;
-	ypos = 954;
+	ypos = 920;
 }

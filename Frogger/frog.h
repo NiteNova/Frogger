@@ -5,13 +5,13 @@ using namespace std;
 
 class frog {
 private:
-	float xpos;
-	float ypos;
 	int lives;
 	float xVel;
 	float yVel;
 
 public:
+	float xpos;
+	float ypos;
 	frog();
 	void draw(sf::RenderWindow& window);
 	void jump(bool* keys);
